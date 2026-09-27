@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consensus — public will on replacements</title>
+  <meta name="description" content="A co-op that maps what the public will accept as replacements for failing systems. Not a party. Not a conference. Not crypto. Housing first." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --ink: #1a1a1a;
+      --muted: #5c574e;
+      --line: #d9d0c0;
+      --amber: #d97706;
+      --amber-soft: #f3e4c8;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; line-height: 1.5; }
+    a { color: var(--ink); }
+    header, main, footer { width: min(880px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 28px 0 8px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+    .mark { font-weight: 600; letter-spacing: 0.12em; font-size: 13px; }
+    .legal { color: var(--muted); font-size: 12px; }
+    nav { display: flex; gap: 18px; font-size: 13px; }
+    nav a { text-decoration: none; border-bottom: 1px solid transparent; }
+    nav a:hover { border-bottom-color: var(--ink); }
+    .hero { padding: 56px 0 28px; }
+    h1 { font-family: Newsreader, Georgia, serif; font-weight: 500; font-size: clamp(40px, 8vw, 72px); line-height: 0.95; margin: 0 0 20px; }
+    .lede { font-size: 18px; max-width: 36em; color: var(--muted); }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; }
+    .pill { border: 1px solid var(--line); padding: 6px 10px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+    section { padding: 28px 0 8px; border-top: 1px solid var(--line); }
+    h2 { font-family: Newsreader, Georgia, serif; font-weight: 500; font-size: 28px; margin: 0 0 12px; }
+    h3 { font-size: 15px; margin: 0 0 8px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .card { border: 1px solid var(--line); background: #fffdf8; padding: 16px; }
+    .card button, .join button {
+      width: 100%; margin-top: 12px; background: var(--ink); color: var(--paper);
+      border: 0; padding: 10px 12px; font: inherit; cursor: pointer;
+    }
+    .card button[aria-pressed="true"] { background: var(--amber); color: #1a1a1a; }
+    .meta { color: var(--muted); font-size: 13px; }
+    .charter ol { padding-left: 18px; }
+    .charter li { margin: 0 0 10px; }
+    form { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    input[type="email"] {
+      flex: 1; min-width: 220px; border: 1px solid var(--line); background: #fffdf8;
+      padding: 10px 12px; font: inherit;
+    }
+    .note { font-size: 13px; color: var(--muted); }
+    footer { padding: 36px 0 48px; color: var(--muted); font-size: 13px; }
+    #tally { margin-top: 16px; padding: 12px; background: var(--amber-soft); display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="mark">CONSENSUS</div>
+      <div class="legal">Constitutional Consensus Cooperative</div>
+    </div>
+    <nav>
+      <a href="#vote">This week</a>
+      <a href="#charter">Charter</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+  <main>
+    <div class="hero">
+      <h1>Public will on what should replace failing systems.</h1>
+      <p class="lede">Consensus is a co-op that maps replacements people can live with across camps. Not a party. Not a candidate list. Not the conference. Not a chain.</p>
+      <div class="pills">
+        <span class="pill">Systems, not jerseys</span>
+        <span class="pill">Housing first</span>
+        <span class="pill">This room, not America</span>
+      </div>
+    </div>
+
+    <section id="vote">
+      <h2>This week: housing supply</h2>
+      <p class="meta">The system: legal housing is slower and more expensive to add than demand. Who pays: renters and first-time buyers. Vote one replacement. This is this room, not the national electorate.</p>
+      <div class="grid" style="margin-top:16px">
+        <article class="card">
+          <h3>1 — By-right duplex / fourplex</h3>
+          <p>Allow modest density on ordinary lots without a special hearing.</p>
+          <p class="meta">Tradeoff: neighborhood form changes. Who pays: mostly private builders. 90-day test: one zone, clock the permit days.</p>
+          <button data-choice="1">Vote 1</button>
+        </article>
+        <article class="card">
+          <h3>2 — Permit shot clock</h3>
+          <p>If the city misses the deadline, the file moves.</p>
+          <p class="meta">Tradeoff: less discretionary review. Who pays: staff capacity. 90-day test: publish average days-to-decision.</p>
+          <button data-choice="2">Vote 2</button>
+        </article>
+        <article class="card">
+          <h3>3 — Pay after occupancy</h3>
+          <p>Incentive only after a unit is occupied, not after paper is entitled.</p>
+          <p class="meta">Tradeoff: public revenue. Who pays: taxpayers. 90-day test: credit only with certificate of occupancy.</p>
+          <button data-choice="3">Vote 3</button>
+        </article>
+      </div>
+      <div id="tally"></div>
+    </section>
+
+    <section id="charter">
+      <h2>Charter v0.1</h2>
+      <p class="lede">Constitutional here means a written operating charter: who votes, what a proposal must include, how agreement is measured, how the rules change. Not a side in a 1787 fight.</p>
+      <div class="charter">
+        <ol>
+          <li><strong>Purpose.</strong> Map replacements for failing systems. Publish the tradeoffs.</li>
+          <li><strong>Scope.</strong> Systems and mechanisms only. No candidate pages, party rankings, or GOTV.</li>
+          <li><strong>Membership.</strong> One person, one vote. Founder, donors, and staff get no extra policy vote.</li>
+          <li><strong>Issue format.</strong> Problem, who pays today, at least three replacement cards with tradeoff, payer, 90-day test, and where tried.</li>
+          <li><strong>Voting.</strong> Agree / disagree / pass, or rank. No reply-war as the product.</li>
+          <li><strong>Honesty.</strong> Always show sample size. Never call a site poll “the American electorate.”</li>
+          <li><strong>Consensus rule.</strong> Publish as consensus only what survives across opposing clusters. Plurality is reported separately.</li>
+          <li><strong>Amendment.</strong> Charter changes need a higher bar than ordinary issue votes. Post the text 7 days prior.</li>
+          <li><strong>Money and speech.</strong> No endorsing, opposing, or donating to candidates or parties. No token. No voter file.</li>
+          <li><strong>Capture.</strong> No party, PAC, or single donor sets the agenda. Agenda is member-ranked. Sources required on featured briefs.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="join">
+      <h2>Join the room</h2>
+      <p>Membership can be free at launch. The weekly Signal is the digest: what this room voted, where camps still agreed, what we test next.</p>
+      <form class="join" action="mailto:hello@theconsensus.us" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="Email for the weekly Signal" required />
+        <button type="submit">Request membership</button>
+      </form>
+      <p class="note">Replace the mailto with Beehiiv / Buttondown before public launch. Until then this is a placeholder capture.</p>
+    </section>
+  </main>
+  <footer>
+    A project of the Constitutional Consensus Cooperative. Issue advocacy only. Housing first until the format works.
+  </footer>
+  <script>
+    const key = "consensus-housing-v1";
+    const tallyEl = document.getElementById("tally");
+    const counts = JSON.parse(localStorage.getItem(key) || "{\"1\":0,\"2\":0,\"3\":0,\"you\":null}");
+    function render() {
+      const total = counts["1"] + counts["2"] + counts["3"];
+      if (!total) return;
+      tallyEl.style.display = "block";
+      tallyEl.innerHTML = "This room: n = " + total +
+        ". 1: " + counts["1"] + " · 2: " + counts["2"] + " · 3: " + counts["3"] +
+        ". Not the national electorate.";
+      document.querySelectorAll("[data-choice]").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset.choice === counts.you ? "true" : "false");
+      });
+    }
+    document.querySelectorAll("[data-choice]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (counts.you === btn.dataset.choice) return;
+        if (counts.you) counts[counts.you] -= 1;
+        counts.you = btn.dataset.choice;
+        counts[counts.you] += 1;
+        localStorage.setItem(key, JSON.stringify(counts));
+        render();
+      });
+    });
+    render();
+  </script>
+</body>
+</html>
